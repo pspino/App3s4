@@ -71,6 +71,18 @@ xdot = 1.5;
 tmp = out.data(:,2);
 y = tmp(end);
 circle(x,y,rayon);
+
+%% Slide
+mu = 200/1000;
+B = [0;-1;0;0];
+init = [x,xdot,y,0];
+sim('LaboAPP3');
+plot(out.data(:,1),out.data(:,2));
+
+tmp = out.data(:,1);
+x = tmp(end);
+circle(x,y,rayon);
+
 %% Sol
 line([0 1], [0 0]);
 line([1 1], [0 1.2]);
