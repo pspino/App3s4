@@ -1,0 +1,43 @@
+import csv
+import os
+import bpy
+
+start_pos = (0,0,0)
+
+print()
+print('Suppression des objets')
+if "Sphere" in bpy.data.objects:
+    bpy.data.objects["Sphere"].select = True
+    bpy.ops.object.delete()
+    print("Sphere has been deleted")
+if "Plane" in bpy.data.objects:
+    bpy.data.objects["Plane"].select = True
+    bpy.ops.object.delete()
+    print("Plane has been deleted")
+
+
+bpy.ops.mesh.primitive_plane_add(location=(0,0,0))
+plan = bpy.data.objects["Plane"]
+plan.dimensions = 40, 20, 0
+
+bpy.ops.mesh.primitive_uv_sphere_add(segments=32, size=1, location=start_pos)
+bpy.ops.object.shade_smooth()
+
+ob = bpy.context.active_object
+
+frame_num = 0
+
+path = os.path.dirname(os.path.dirname(__file__))
+completePath = path + "\input.txt"
+print(completePath)
+
+file = open(completePath, "r")
+for line in file:
+    print(line)
+    y, z,= line.strip(" \n[]").split("\t")
+    location = float(y), 0, float(z)
+    
+    bpy.context.scene.frame_set(frame_num)
+    ob.location = location
+    ob.keyframe_insert(data_path="location", index=-1)
+    frame_num += 1
