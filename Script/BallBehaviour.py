@@ -24,8 +24,8 @@ sol = 1.2
 
 for frameNum in range(scene.frame_end + 1):
     scene.frame_set(frameNum)
-    x = vx*(frameNum/60) 
-    y += g*(x/vx) + vy
+    x = vx*(frameNum/24) 
+    y = (g/2)*(x/vx)**2 + vy*(x/vx) + 10
     sphere.location = (0,x,y)
     sphere.keyframe_insert(data_path="location", index=-1)
     print((x,y))
