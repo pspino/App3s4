@@ -2,3 +2,6 @@
 *.autosave
 *.r2016a
 Blender Labo/
+*.aux
+*.out
+*.synctex
