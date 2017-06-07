@@ -25,6 +25,7 @@
 	}
 \end{titlepage}
 \section{Variables d'états}
+\noindent
 Pour résourdre le système complex telle que demander par l'app, il faut utiliser la méthode des variables d'états. Pour trouvé les valeurs des positions du vaissau pour chaque frame du video, il faut utiliser la méthode de résolution par équation État-espace.
 \begin{equation}
 [\dot{x}] = [A]q + [B]u
@@ -106,7 +107,7 @@ q_{3} = y \\
 q_{4} = \dot{y} \\
 \end{matrix}
 \end{equation}
-Ensuite, on trouve les égalités.
+Ensuite, on trouve les égalités selon les spécifications du système, tel que le vaissau s'écrasant sur la planète. 
 \begin{equation}
 \begin{matrix}
 \dot{q_{1}} = \dot{x} = q_{2} \\ 
@@ -115,9 +116,10 @@ Ensuite, on trouve les égalités.
 \dot{q_{4}} = \ddot{y} = g \\
 \end{matrix}
 \end{equation}
+Sachant qu'il n'y a pas de force appliqué sur le vaissau dans l'axe des absciss, il est donc normale de vouloir a ce que la sorti de $q_1$  égale $\dot{x}$, soit 1.5m/s. Or, il a été indique que $q_2 = \dot{x}$. Donc la variable de sortie pour $q_1$ doit être égale à $q_2$. Puisqu'on sait qu'il n'y a aucune accélération en x, $\dot{x}$ = 0. La même logique s'applique aux valeurs dans l'axe des Ordonnées. Parcontre, cette fois-ci, il y a une accélération a prendre a considération soit, l'accélération gravitationelle de $5m/s^2$. Alors, pour que les variables de sorties soit conforme au équations mentionnées ci-haut.
 \newpage
 \noindent
-Ou g est égale à l'accélération gravitationnelle sur la planète dans le film d'animation. À l'aide de manipulation matricielle, on obtiens les matrices A, B, C et D suivantes.
+On obtiens les matrices A, B, C et D suivantes.
 \begin{equation}
 	A = 
   	\begin{bmatrix}
@@ -144,7 +146,8 @@ Ou g est égale à l'accélération gravitationnelle sur la planète dans le fil
   	0 \\
   	\end{bmatrix}
 \end{equation}
-\section{Premier Bon}
+\section{Cinématique}
+\subsection{Premier Bon}
 \begin{equation}
 	d_{x} = v_{a_{x}} = 1,5 m/s \hspace{10mm} t=\frac{x}{v_{i_{x}}}
 \end{equation}
