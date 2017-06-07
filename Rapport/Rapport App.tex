@@ -2,6 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{hyperref}
 \usepackage[english, french]{babel}
+\usepackage{amsmath, amssymb}
 
 \begin{document}
 
@@ -23,10 +24,129 @@
 		\end{center}
 	}
 \end{titlepage}
-\section{intro}
-\noindent
-Dans le cardre du cour de simulation de réalité virtuelle, le mandat de est simuler un vaisseau spacial s'écrasant sur un plantète extra-terrestre pour une scène d'un film d'animation. Le mandat se divisais en plusieurs tâches. Obtenir les variables d'états du système complex 
 \section{Variables d'états}
+\begin{equation}
+\dot{x} = Aq + Bu
+\end{equation}
+\begin{equation}
+\dot{y} = Cq + Dy
+\end{equation}
+\begin{equation}
+  	\begin{bmatrix}
+  	\dot{q_{1}} \\ 
+  	\dot{q_{2}} \\ 
+  	\dot{q_{3}} \\ 
+  	\dot{q_{4}} \\
+  	\end{bmatrix}
+  	=
+  	\begin{bmatrix}
+  	0 & 1 & 0 & 0 \\ 
+  	0 & 0 & 0 & 0 \\ 
+  	0 & 0 & 0 & 1 \\ 
+  	0 & 0 & 0 & 0 \\
+  	\end{bmatrix}
+  	*
+  	\begin{bmatrix}
+  	q_{1} \\ 
+  	q_{2} \\ 
+  	q_{3} \\ 
+  	q_{4} \\
+  	\end{bmatrix}
+  	+
+  	\begin{bmatrix}
+  	0 \\ 
+  	0 \\ 
+  	0 \\ 
+  	g \\
+  	\end{bmatrix}
+  	*
+  	\begin{bmatrix}
+  	1 \\ 
+  	1 \\ 
+  	1 \\ 
+  	1 \\
+  	\end{bmatrix}
+\end{equation}
+\begin{equation}
+  	\begin{bmatrix}
+ 	s_{1} \\ 
+  	s_{2} \\
+  	\end{bmatrix}
+  	=
+  	\begin{bmatrix}
+  	1 & 0 & 0 & 0 \\ 
+  	0 & 0 & 0 & 1 \\
+  	\end{bmatrix}
+ 	*
+  	\begin{bmatrix}
+  	q_{1} \\ 
+  	q_{2} \\ 
+  	q_{3} \\ 
+ 	q_{4} \\
+  	\end{bmatrix}
+  	+
+  	\begin{bmatrix}
+  	0 \\ 
+  	0 \\
+  	\end{bmatrix}
+  	*
+  	\begin{bmatrix}
+  	s_{1} \\ 
+  	s_{2} \\
+  	\end{bmatrix}
+\end{equation}
+\begin{equation}
+	A = 
+  	\begin{bmatrix}
+  	1 & 0 & 0 & 0 \\ 
+  	0 & 0 & 0 & 0 \\
+  	0 & 0 & 0 & 1 \\ 
+  	0 & 0 & 0 & 0 \\
+  	\end{bmatrix}
+  	B = 
+  	\begin{bmatrix}
+  	0 \\ 
+  	0 \\ 
+  	0 \\ 
+  	g \\
+  	\end{bmatrix}
+  	C =
+  	\begin{bmatrix}
+  	1 & 0 & 0 & 0 \\ 
+  	0 & 0 & 0 & 1 \\
+  	\end{bmatrix}
+  	D = 
+  	\begin{bmatrix}
+  	0 \\ 
+  	0 \\
+  	\end{bmatrix}
+\end{equation}
+\subsection{Deuxième Bon}
+\begin{equation}
+	v_{1_{y}} = 10,06 m/s 
+\end{equation}
+\begin{equation}
+	v_{1_{x}} = 1,5 m/s 
+\end{equation}
+\begin{equation}
+	y = v_{i}\frac{x}{v_{1}} + \frac{-5}{2}*\frac{x^2}{v_{i}^2} + 11,62
+\end{equation}
+\begin{equation}
+	2,5 = 9,432\frac{x}{1,5} + -2,5*\frac{x^2}{1,5^2} + 11,62
+\end{equation}
+\begin{equation}
+	x = -1,46  \hspace{10mm} x = 7,12
+\end{equation}
+\begin{equation}
+	v_{A}=\sqrt{1,5^2 + 9,432^2} = 9,55 m/s
+\end{equation}
+\begin{equation}
+	\frac{1}{2}mv_{i}^2 = mg\Delta h
+\end{equation}
+\begin{equation}
+	\Delta h = 9,12m
+\end{equation}
+
 \section{Calcul des équations des variables d'états }
 
 \end{document}
