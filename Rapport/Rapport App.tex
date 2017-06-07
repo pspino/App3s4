@@ -25,12 +25,14 @@
 	}
 \end{titlepage}
 \section{Variables d'états}
+Pour résourdre le système complex telle que demander par l'app, il faut utiliser la méthode des variables d'états. Pour trouvé les valeurs des positions du vaissau pour chaque frame du video, il faut utiliser la méthode de résolution par équation État-espace.
 \begin{equation}
-\dot{x} = Aq + Bu
+[\dot{x}] = [A]q + [B]u
 \end{equation}
 \begin{equation}
-\dot{y} = Cq + Dy
+[\dot{y}] = [C]q + [D]y
 \end{equation}
+On exprime ainsi les varaibles d'entrée, les variables de sortie et les variables d'état selon les équations (3) et (4).
 \begin{equation}
   	\begin{bmatrix}
   	\dot{q_{1}} \\ 
@@ -45,7 +47,7 @@
   	0 & 0 & 0 & 1 \\ 
   	0 & 0 & 0 & 0 \\
   	\end{bmatrix}
-  	*
+  	\times
   	\begin{bmatrix}
   	q_{1} \\ 
   	q_{2} \\ 
@@ -59,7 +61,7 @@
   	0 \\ 
   	g \\
   	\end{bmatrix}
-  	*
+  	\times
   	\begin{bmatrix}
   	1 \\ 
   	1 \\ 
@@ -77,7 +79,7 @@
   	1 & 0 & 0 & 0 \\ 
   	0 & 0 & 0 & 1 \\
   	\end{bmatrix}
- 	*
+ 	\times
   	\begin{bmatrix}
   	q_{1} \\ 
   	q_{2} \\ 
@@ -89,12 +91,33 @@
   	0 \\ 
   	0 \\
   	\end{bmatrix}
-  	*
+  	\times
   	\begin{bmatrix}
   	s_{1} \\ 
   	s_{2} \\
   	\end{bmatrix}
 \end{equation}
+Ensuite, les matrices A, B, C et D seront trouvé à l'aide des propositions suivante.
+\begin{equation}
+\begin{matrix}
+q1 = x \\ 
+q2 = \dot{x} \\
+q3 = y \\
+q4 = \dot{y} \\
+\end{matrix}
+\end{equation}
+Ensuite, on trouve les égalités.
+\begin{equation}
+\begin{matrix}
+\dot{q1} = \dot{x} = q2 \\ 
+\dot{q2} = \ddot{x} = 0 \\
+\dot{q3} = \dot{x} = q4 \\ 
+\dot{q4} = \dot{x} = g \\
+\end{matrix}
+\end{equation}
+\newpage
+\noindent
+Ou g est égale à l'accélération gravitationnelle sur la planète dans le film d'animation. À l'aide de manipulation matricielle, on obtiens les matrices A, B, C et D suivantes.
 \begin{equation}
 	A = 
   	\begin{bmatrix}
