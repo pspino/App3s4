@@ -10,6 +10,8 @@ g = -5;
 frame = 1/24;
 rayon = 1.5;
 
+output = [];
+
 A = [0 1 0 0; 0 0 0 0; 0 0 0 1; 0 0 0 0];
 B = [0;0;0;g];
 C = [1 0 0 0; 0 0 1 0];
@@ -24,6 +26,7 @@ init = [x;xdot;y;ydot];
 sol = 1.2;
 sim('LaboAPP3');
 plot(out.data(:,1), out.data(:,2));
+output = [output;out.data(:,1) out.data(:,2)];
 circle(x,y,rayon);
 
 %% 2nd curve
@@ -37,6 +40,7 @@ init = [x;xdot;y;ydot];
 sol = 1.0;
 sim('LaboAPP3');
 plot(out.data(:,1), out.data(:,2));
+output = [output;out.data(:,1) out.data(:,2)];
 circle(x,y,rayon);
 
 %% 3rd curve
@@ -50,6 +54,7 @@ init = [x;xdot;y;ydot];
 sol = 1.5;
 sim('LaboAPP3');
 plot(out.data(:,1), out.data(:,2));
+output = [output;out.data(:,1) out.data(:,2)];
 circle(x,y,rayon);
 
 %% 4th curve
@@ -63,6 +68,7 @@ init = [x;xdot;y;ydot];
 sol = 1;
 sim('LaboAPP3');
 plot(out.data(:,1), out.data(:,2));
+output = [output;out.data(:,1) out.data(:,2)];
 circle(x,y,rayon);
 
 tmp = out.data(:,1);
@@ -78,11 +84,13 @@ B = [0;-1;0;0];
 init = [x,xdot,y,0];
 sim('LaboAPP3');
 plot(out.data(:,1),out.data(:,2));
+output = [output;out.data(:,1) out.data(:,2)];
 
 tmp = out.data(:,1);
 x = tmp(end);
 circle(x,y,rayon);
 
+csvwrite('input.txt',output)
 %% Sol
 line([0 1], [0 0]);
 line([1 1], [0 1.2]);
