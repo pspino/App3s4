@@ -30,7 +30,7 @@ Pour résourdre le système complex telle que demander par l'app, il faut utilis
 [\dot{x}] = [A]q + [B]u
 \end{equation}
 \begin{equation}
-[\dot{y}] = [C]q + [D]y
+[y] = [C]q + [D]y
 \end{equation}
 On exprime ainsi les varaibles d'entrée, les variables de sortie et les variables d'état selon les équations (3) et (4).
 \begin{equation}
@@ -100,19 +100,19 @@ On exprime ainsi les varaibles d'entrée, les variables de sortie et les variabl
 Ensuite, les matrices A, B, C et D seront trouvé à l'aide des propositions suivante.
 \begin{equation}
 \begin{matrix}
-q1 = x \\ 
-q2 = \dot{x} \\
-q3 = y \\
-q4 = \dot{y} \\
+q_{1} = x \\ 
+q_{2} = \dot{x} \\
+q_{3} = y \\
+q_{4} = \dot{y} \\
 \end{matrix}
 \end{equation}
 Ensuite, on trouve les égalités.
 \begin{equation}
 \begin{matrix}
-\dot{q1} = \dot{x} = q2 \\ 
-\dot{q2} = \ddot{x} = 0 \\
-\dot{q3} = \dot{x} = q4 \\ 
-\dot{q4} = \dot{x} = g \\
+\dot{q_{1}} = \dot{x} = q_{2} \\ 
+\dot{q_{2}} = \ddot{x} = 0 \\
+\dot{q_{3}} = \dot{y} = q_{4} \\ 
+\dot{q_{4}} = \ddot{y} = g \\
 \end{matrix}
 \end{equation}
 \newpage
@@ -194,6 +194,68 @@ Ou g est égale à l'accélération gravitationnelle sur la planète dans le fil
 	-v_{A_{n}}^, = 0,8v_{A_{n}} 	\hspace{10mm}
 	v_{A_{n}} = 7,64 m/s
 \end{equation}
-\section{Calcul des équations des variables d'états }
+
+\subsection{Troisième Bond}
+\begin{equation}
+\frac{1}{2}mV_{i} = mg \Delta h
+\end{equation}
+\begin{center}
+sachant
+\end{center}  
+
+\begin{equation}
+\frac{1}{2} (7,64)^2 = 5*\Delta h
+\end{equation}
+\begin{center}
+et
+\end{center}
+
+\begin{equation}
+\Delta h = 5,83
+\end{equation}
+
+
+\begin{center}
+on determine
+\end{center}
+
+
+\begin{equation}
+2,5 + 5,83 = 8,33m
+\end{equation}
+
+\begin{equation}
+mg \Delta h = \frac{1}{2}mV_{f}
+\end{equation}
+
+\begin{equation}
+5(8,33-3) = \frac{1}{2} V_{f}^2
+\end{equation}
+
+\begin{equation}
+V_{f}=  \sqrt(53,3) = -7,30 m/s
+\end{equation}
+
+\begin{equation}
+e = 0,7 = \frac{-V'_{\Delta}}{V_{\Delta}} => V_{\Delta} = -V_{\Delta}*0,7 => 7,30*0,7 = 5,11 m/s
+\end{equation}
+\subsection{Friction}
+
+\begin{equation}
+F_{r} = 200N = U_{s} \vec{N} \quad \textrm{où} \quad\vec{N} = -F_{g} = -(200*-5) = 1000
+\end{equation}
+ 
+ \begin{equation}
+ U_{s} = \frac{200}{1000}
+ \end{equation}
+ 
+ \begin{equation}
+ F_{r} = U_{s} * mg = 200 = u * 200* 5 \quad \textrm{donc} \quad donc u = 0.2
+ \end{equation}
+ 
+ \begin{equation}
+ 200N = ma  \quad \textrm{donc} \quad a = 1m/s^2
+ \end{equation}
+
 
 \end{document}
